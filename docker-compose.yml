@@ -26,7 +26,7 @@ services:
     environment:
       LS_JAVA_OPTS: "-Xmx512m -Xms512m"
     ports:
-      - "514:514"
+      - "5514:5514"
       - "5044:5044"
       - "5001:5000"
       - "9600:9600"
@@ -49,6 +49,7 @@ services:
   beats:
     image: elastic/filebeat:7.16.2
     volumes:
+      - /var/log/test_json/:/var/log/test_json/:ro
       - ./configs/filebeat/config.yml:/usr/share/filebeat/filebeat.yml:ro
       - ./host_metrics_app/:/host_metrics_app/:ro
     networks:

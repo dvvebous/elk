@@ -5,4 +5,8 @@
 - pipeline.id: service_rsyslog
   pipeline.workers: 1
   pipeline.batch.size: 1
-  path.config: "/usr/share/logstash/config/pipelines/service_rsyslog"
+  path.config: "/usr/share/logstash/config/pipelines/service_rsyslog.conf"
+- pipeline.id: service_custom
+  pipeline.workers: 1
+  pipeline.batch.size: 1
+  path.config: "/usr/share/logstash/config/pipelines/service_test_json.conf"
